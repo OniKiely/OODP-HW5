@@ -1,0 +1,65 @@
+@startuml
+
+object "php_demo1 : Folder" as demo1 {
+  name = "Demo 1"
+  parent = null
+}
+
+object "SourceFiles : Folder" as sourceFiles {
+  name = "Source Files"
+  parent = demo1
+}
+
+object "IncludedPath : Folder" as includedPath {
+  name = "Included Path"
+  parent = demo1
+}
+
+object "RemoteFiles : Folder" as remoteFiles {
+  name = "Remote Files"
+  parent = demo1
+}
+
+object "phalcon : Folder" as phalcon {
+  name = ".phalcon"
+  parent = sourceFiles
+}
+
+object "cache : Folder" as cache {
+  name = "cache"
+  parent = sourceFiles
+}
+
+object "publicFile : Folder" as publicFile {
+  name = "public"
+  parent = sourceFiles
+}
+
+object "htaccessFile : File" as f1 {
+  name = ".htaccess"
+  parent = sourceFiles
+}
+
+object "htrouterFile : File" as f2 {
+  name = ".htrouter.php"
+  parent = sourceFiles
+}
+
+object "indexFile : File" as f3 {
+  name = "index.html"
+  parent = sourceFiles
+}
+
+demo1 <-- sourceFiles
+demo1 <-- includedPath
+demo1 <-- remoteFiles
+sourceFiles <-- phalcon
+sourceFiles <-- cache
+sourceFiles <-- publicFile
+sourceFiles <-- f1
+sourceFiles <-- f2
+sourceFiles <-- f3
+
+
+
+@enduml

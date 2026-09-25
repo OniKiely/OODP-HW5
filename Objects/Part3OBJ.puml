@@ -1,0 +1,20 @@
+@startuml
+
+object "ships[0] : Ship" as ship0 {
+  name = "Titanic"
+  yearBuilt = "1912"
+}
+
+object "ships[1] : CruiseShip" as ship1 {
+  name = "Disney Cruse Ship"
+  yearBuilt = "2018"
+  maxPassengers = 6680
+}
+
+object "ships[2] : CargoShip" as ship2 {
+  name = "SS. Cargo"
+  yearBuilt = "2009"
+  cargoCapacity = 220000
+}
+
+@enduml

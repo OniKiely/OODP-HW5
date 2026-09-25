@@ -1,0 +1,39 @@
+@startuml
+
+class File {
+    - name: String
+    - parent: Folder
+    + File(name: String, parent: Folder)
+    + getName(): String
+    + setName(name: String): void
+    + getParent(): Folder
+    + setParent(parent: Folder): void
+    + print(indent: String): void
+}
+
+class Folder {
+    - name: String
+    - parent: Folder
+    - subFolders: List<Folder>
+    - files: List<File>
+    + Folder(name: String)
+    + Folder(name: String, parent: Folder)
+    + getName(): String
+    + setName(name: String): void
+    + getParent(): Folder
+    + setParent(parent: Folder): void
+    + getSubFolders(): List<Folder>
+    + setSubFolders(subFolders: List<Folder>): void
+    + getFiles(): List<File>
+    + setFiles(files: List<File>): void
+    + addFile(fileName: String): File
+    + addSubFolder(folderName: String): Folder
+    + deleteFile(fileName: String): boolean
+    + deleteSubFolder(folderName: String): boolean
+    + print(indent: String): void
+    + print(): void
+}
+
+File --> Folder : parent
+
+@enduml

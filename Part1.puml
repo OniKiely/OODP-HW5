@@ -1,0 +1,49 @@
+@startuml
+
+class Employee {
+    - firstName: String
+    - lastName: String
+    - SSN: int
+    + Employee(fn: String, ln: String, ssn: int)
+    + setFirstName(name: String): void
+    + setLastName(name: String): void
+    + setSSN(ssn: int): void
+    + getFirstName(): String
+    + getLastName(): String
+    + getSSN(): int
+}
+
+class BaseEmployee extends Employee {
+    - baseSalary: double
+    + BaseEmployee(fn: String, ln: String, ssn: int, salary: double)
+    + setBaseSalary(salary: double): void
+    + getBaseSalary(): double
+}
+
+class CommisionEmployee extends Employee {
+    - commissionRate: double
+    - grossSales: int
+    + CommisionEmployee(String fn, String ln, int ssn, double rate, int sales)
+    + setCommissionRate(salary: double): void
+    + setGrossSales(sales: int): void
+    + getCommissionRate(): double
+    + getGrossSales(): int
+}
+
+class HourlyEmployee extends Employee {
+    - wage: double
+    - numOfHoursWorked: double
+    + HourlyEmployee(fn: String, ln: String, ssn: int, wage: double, hours: double)
+    + setWage(wage: double): void
+    + setNumOfHoursWorked(hours: double): void
+    + getWage(): double
+    + getNumOfHoursWorked(): double
+}
+
+class SalariedEmployee extends Employee {
+    - weeklySalary: double
+    + SalariedEmployee(fn: String, ln: String, ssn: int, weeklysalary: double)
+    + setWeeklySalary(salary: double): void
+    + getWeeklySalary(): double
+}
+@enduml

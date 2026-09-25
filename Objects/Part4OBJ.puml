@@ -1,0 +1,13 @@
+@startuml
+
+object "course" {
+  courseName = "Object-Oriented Design and Programming"
+  instructorFirstName = "Nima"
+  instructorLastName = "Davarpanah"
+  instructorOffice = "3-2636"
+  BookTitle = "Clean Code"
+  BookAuthor = "Robert C. Martin"
+  BookPublisher = "Prentice Hall"
+
+}
+@enduml

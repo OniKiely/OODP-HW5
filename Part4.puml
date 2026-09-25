@@ -1,0 +1,70 @@
+@startuml
+
+class Course {
+    - courseName: String
+    - instructor1: Instructor
+    - instructor2: Instructor
+    - textbook1: Textbook
+    - textbook2: Textbook
+    + Course(courseName: String, inst1First: String, inst1Last: String, inst1Office: String, inst2First: String, inst2Last: String, inst2Office: String, book1Title: String, book1Author: String, book1Publisher: String, book2Title: String, book2Author: String, book2Publisher: String)
+    + getCourseName(): String
+    + setCourseName(courseName: String): void
+    + getInstructor1FirstName(): String
+    + setInstructor1FirstName(firstName: String): void
+    + getInstructor1LastName(): String
+    + setInstructor1LastName(lastName: String): void
+    + getInstructor1OfficeNumber(): String
+    + setInstructor1OfficeNumber(officeNumber: String): void
+    + getInstructor2FirstName(): String
+    + setInstructor2FirstName(firstName: String): void
+    + getInstructor2LastName(): String
+    + setInstructor2LastName(lastName: String): void
+    + getInstructor2OfficeNumber(): String
+    + setInstructor2OfficeNumber(officeNumber: String): void
+    + getTextbook1Title(): String
+    + setTextbook1Title(title: String): void
+    + getTextbook1Author(): String
+    + setTextbook1Author(author: String): void
+    + getTextbook1Publisher(): String
+    + setTextbook1Publisher(publisher: String): void
+    + getTextbook2Title(): String
+    + setTextbook2Title(title: String): void
+    + getTextbook2Author(): String
+    + setTextbook2Author(author: String): void
+    + getTextbook2Publisher(): String
+    + setTextbook2Publisher(publisher: String): void
+    + printCourseInfo(): void
+}
+
+class Instructor {
+    - firstName: String
+    - lastName: String
+    - officeNumber: String
+    + Instructor()
+    + Instructor(firstName: String, lastName: String, officeNumber: String)
+    + getFirstName(): String
+    + setFirstName(firstName: String): void
+    + getLastName(): String
+    + setLastName(lastName: String): void
+    + getOfficeNumber(): String
+    + setOfficeNumber(officeNumber: String): void
+}
+
+class Textbook {
+    - title: String
+    - author: String
+    - publisher: String
+    + Textbook()
+    + Textbook(title: String, author: String, publisher: String)
+    + getTitle(): String
+    + setTitle(title: String): void
+    + getAuthor(): String
+    + setAuthor(author: String): void
+    + getPublisher(): String
+    + setPublisher(publisher: String): void
+}
+
+Course *-- "2" Instructor
+Course *-- "2" Textbook
+
+@enduml
